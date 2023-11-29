@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Pawsitive Detect</string>
+    <string name="menu_home">Home</string>
+    <string name="menu_favorited">Favorited</string>
+    <string name="menu_explore">Explore</string>
+    <string name="menu_upload">Upload</string>
+    <string name="menu_notification">Notification</string>
+    <string name="menu_profile">Profile</string>
+</resources>
