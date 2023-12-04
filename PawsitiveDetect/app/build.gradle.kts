@@ -40,7 +40,7 @@ android {
         compose = true
     }
     composeOptions {
-        kotlinCompilerExtensionVersion = "1.4.3"
+        kotlinCompilerExtensionVersion = "1.4.5"
     }
     packaging {
         resources {
@@ -73,4 +73,7 @@ dependencies {
     // material 3
     implementation("androidx.compose.material3:material3:1.1.2")
     implementation("androidx.compose.material3:material3-window-size-class:1.1.2")
+
+    // Image Picker
+    implementation("io.coil-kt:coil-compose:2.2.2")
 }

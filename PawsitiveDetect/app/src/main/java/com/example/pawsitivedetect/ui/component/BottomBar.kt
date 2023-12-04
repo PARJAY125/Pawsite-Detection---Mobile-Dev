@@ -54,8 +54,8 @@ fun BottomBar(
                 screen = Screen.Upload
             ),
             NavigationItem(
-                title = stringResource(R.string.menu_notification),
-                icon = Icons.Default.Notifications,
+                title = stringResource(R.string.menu_chat),
+                icon = Icons.Default.Warning,
                 screen = Screen.Notification
             ),
             NavigationItem(
@@ -88,6 +88,8 @@ fun BottomBar(
                         restoreState = true
                         launchSingleTop = true
                     }
+
+                    // TODO : if upload, then go to anu
                 }
             )
         }

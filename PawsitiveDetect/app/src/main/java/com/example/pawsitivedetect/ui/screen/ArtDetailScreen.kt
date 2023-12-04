@@ -1,9 +1,18 @@
 package com.example.pawsitivedetect.ui.screen
 
-import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 
 @Composable
-fun ArtDetailScreen() {
-    Text("This is Art Detail Screen")
+fun ArtDetailScreen(
+) {
+    // Column
+        // art image
+        // text judul
+        // text deskripsi
+        // Button Follow
+        // Button Favorite
+
+        // Comment Section
+            // LazyColumn
+                // items -> CommentMessage(message)
 }
