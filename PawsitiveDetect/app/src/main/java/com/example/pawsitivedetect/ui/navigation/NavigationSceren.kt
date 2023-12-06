@@ -5,7 +5,6 @@ import androidx.compose.ui.Modifier
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
-import com.example.pawsitivedetect.ui.screen.ArtDetailScreen
 import com.example.pawsitivedetect.ui.screen.ExploreScreen
 import com.example.pawsitivedetect.ui.screen.HomeScreen
 import com.example.pawsitivedetect.ui.screen.NotificationScreen
@@ -17,6 +16,8 @@ fun NavigationSceren(
     navController: NavHostController,
     modifier: Modifier = Modifier
 ) {
+    // Viewmodel provider
+
     NavHost(navController = navController, startDestination = Screen.Home.route) {
         composable(route = Screen.Home.route) {
             HomeScreen()
@@ -39,7 +40,7 @@ fun NavigationSceren(
         }
 
         composable(route = Screen.ArtDetail.route) {
-            ArtDetailScreen()
+//            ArtDetailScreen()
         }
     }
 }

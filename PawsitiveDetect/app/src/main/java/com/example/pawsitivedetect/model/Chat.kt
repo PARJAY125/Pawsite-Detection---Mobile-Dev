@@ -1,7 +1,7 @@
 package com.example.pawsitivedetect.model
 
-data class Message(
+data class Chat(
     val text: String,
     val time: String,
-    val sender: Author,
+    val isFromMe : Boolean
 )

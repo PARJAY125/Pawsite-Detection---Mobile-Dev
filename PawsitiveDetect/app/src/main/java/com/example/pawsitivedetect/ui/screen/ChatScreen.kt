@@ -16,29 +16,38 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.example.pawsitivedetect.GlobalVariable
-import com.example.pawsitivedetect.model.Author
-import com.example.pawsitivedetect.model.Message
+import com.example.pawsitivedetect.model.getUserById
+import com.example.pawsitivedetect.tools.DummyGlobalVariable
+import com.example.pawsitivedetect.model.PersonalChat
 import com.example.pawsitivedetect.ui.component.ChatBubble
 import com.example.pawsitivedetect.ui.component.ChatMakerBox
 import com.example.pawsitivedetect.ui.theme.PawsitiveDetectTheme
 
 @Composable
-fun ChatScreen(messages: List<Message>) {
+fun ChatScreen(
+    personalChat: PersonalChat
+) {
+    val interlocutors = getUserById(personalChat.interlocutorsId)
+
     Box {
         Column(
             modifier = Modifier
                 .fillMaxSize()
                 .background(MaterialTheme.colorScheme.background)
         ) {
+            // TODO : TOP_CHAT_SCREEN
+            // ROW
+                // IMAGE
+                // NAME
+
             // Conversation Container
             LazyColumn(
                 modifier = Modifier
                     .weight(1f)
                     .padding(16.dp)
             ) {
-                items(messages) { message ->
-                    ChatBubble(message = message)
+                items(personalChat.chatList) { message ->
+                    ChatBubble(chat = message)
                     Spacer(modifier = Modifier.padding(bottom = 8.dp))
                 }
             }
@@ -55,7 +64,7 @@ fun ChatScreen(messages: List<Message>) {
 fun ChatScreenPreview() {
     PawsitiveDetectTheme {
         Surface {
-            ChatScreen(messages = GlobalVariable.sampleMessages)
+            ChatScreen(DummyGlobalVariable.PERSONAL_CHAT_DUMMY)
         }
     }
 }
