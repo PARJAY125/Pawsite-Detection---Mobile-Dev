@@ -1,12 +1,12 @@
 package com.example.pawsitivedetect.model
 
 data class ChildComment(
-    val id : String,
+    override val id : String,
     val parentId : String,
-    val senderId: String,
+    override val senderId: String,
 
-    val commentPosition : Int,
-    val time: String,
-    val text: String,
-    val likedBy : Int,
-)
+    override val commentPosition : Int,
+    override val time: String,
+    override val text: String,
+    override val likedBy : Int,
+) : IComment

@@ -44,15 +44,6 @@ fun DisplayDialog(
                 Text("Confirm")
             }
         },
-        dismissButton = {
-            TextButton(
-                onClick = {
-                    onDismissRequest()
-                }
-            ) {
-                Text("Dismiss")
-            }
-        }
     )
 }
 

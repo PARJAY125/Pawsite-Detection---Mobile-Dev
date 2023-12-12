@@ -1,5 +1,8 @@
 package com.example.pawsitivedetect.tools
 
+import com.example.pawsitivedetect.model.PersonalChat
+import com.example.pawsitivedetect.model.User
+import com.example.pawsitivedetect.ui.navigation.Screen
 import java.time.Duration
 import java.time.LocalDateTime
 import java.time.Month
@@ -45,5 +48,13 @@ class UtilityFunction {
             // Create a LocalDateTime object with the generated values
             return LocalDateTime.of(randomYear, randomMonth, randomDay, randomHour, randomMinute, randomSecond)
         }
+
+        // What a smart Way to manage complexity of model duplicate
+        // the idea is to wrap the identical data between 2 model
+        fun wrapPrivateChatListScreenDataNeeded(personalChatList: List<PersonalChat>, userList: List<User>): ArrayList<Pair<PersonalChat, User>> {
+            return ArrayList(personalChatList.zip(userList) { chat, user -> Pair(chat, user) })
+        }
+
+        // TODO : anu
     }
 }

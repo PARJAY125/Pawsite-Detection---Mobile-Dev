@@ -11,5 +11,5 @@ data class ArtPostDetail(
     val isAiGenerated : Boolean,
 
     val likedBy : Int,
-    val comments: List<ParentComment>? = arrayListOf()
+    val comments: List<ParentComment> = arrayListOf()
 )

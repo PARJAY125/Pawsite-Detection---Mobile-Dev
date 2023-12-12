@@ -56,7 +56,7 @@ fun BottomBar(
             NavigationItem(
                 title = stringResource(R.string.menu_chat),
                 icon = Icons.Default.Warning,
-                screen = Screen.Notification
+                screen = Screen.PrivateChat
             ),
             NavigationItem(
                 title = stringResource(R.string.menu_profile),

@@ -1,11 +1,14 @@
 package com.example.pawsitivedetect
 
 import android.content.res.Configuration
+import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.NavHostController
@@ -20,16 +23,26 @@ import com.example.pawsitivedetect.ui.theme.PawsitiveDetectTheme
 fun PawsitiveDetectApp(
     navController: NavHostController = rememberNavController(),
 ) {
-    val navBackStackEntry by rememberNavController().currentBackStackEntryAsState()
+    val navBackStackEntry by navController.currentBackStackEntryAsState()
     val currentRoute = navBackStackEntry?.destination?.route
 
     Scaffold(
         bottomBar = {
-            // TODO : if screen home, favorited, profile, notif, explore display BotNav
-            if (currentRoute != Screen.Upload.route) BottomBar(navController)
-        }
+            if (currentRoute !in listOf(
+                    Screen.Upload.route,
+                    Screen.Login.route,
+                    Screen.Register.route
+                ))
+                BottomBar(navController)
+        },
+        topBar = {
+            // TODO : Look like there will be more task for me
+        },
     ) { innerPadding ->
-        NavigationSceren(navController, modifier = Modifier.padding(innerPadding))
+        Column {
+            Text(text = currentRoute.toString())
+            NavigationSceren(navController, modifier = Modifier.padding(innerPadding))
+        }
     }
 }
 
@@ -38,6 +51,8 @@ fun PawsitiveDetectApp(
 @Composable
 fun PawsitiveDetectAppPreview() {
     PawsitiveDetectTheme {
-        PawsitiveDetectApp(navController = rememberNavController())
+        PawsitiveDetectApp(
+            navController = rememberNavController()
+        )
     }
 }

@@ -12,15 +12,8 @@ import androidx.compose.ui.tooling.preview.Preview
 import com.example.pawsitivedetect.tools.UtilityFunction.Companion.calculateTimeAgo
 import com.example.pawsitivedetect.tools.UtilityFunction.Companion.generateRandomTime
 import com.example.pawsitivedetect.ui.theme.PawsitiveDetectTheme
-import java.time.Duration
-import java.time.Instant
 import java.time.LocalDateTime
-import java.time.Month
-import java.time.ZoneId
 import java.time.format.DateTimeFormatter
-import java.util.Calendar
-import java.util.Date
-import kotlin.random.Random
 
 @Composable
 fun TimeDebugger() {
